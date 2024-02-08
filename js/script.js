@@ -99,6 +99,22 @@ const printQuote = () => {
     htmlString += "</p>";
     // Add htmlString to page
     document.getElementById("quote-box").innerHTML = htmlString;
+    // Set a random background color for the page
+    setRandomBackgroundColor();
+};
+
+/***
+ * Create a function to set a random background color to the page
+ ***/
+const setRandomBackgroundColor = () => {
+    // Create an array with random colors
+    const randomColors = ["tomato", "green", "blue", "red", "orange", "purple", "black"];
+    // Create random number to use as index for randomColors array
+    const randomNumber = Math.floor(Math.random() * randomColors.length);
+    // Get a randomColor by using the random number as the index in the randomColors array
+    const randomColor = randomColors[randomNumber];
+    console.log(randomColor);
+    document.querySelector("body").style.background = randomColor;
 };
 
 printQuote(); /* to have a random quote present the first time the page laods */
