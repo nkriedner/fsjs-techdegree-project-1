@@ -1,14 +1,11 @@
 /******************************************
 Treehouse FSJS Techdegree:
-project 1 - A Random Quote Generator
+Project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance:
-// Check the "Project Resources" section of the project instructions
-// Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
-
 /***
- * `quotes` array
+ * Create an array called 'quotes' containing a minimum of 5 objects
+ * - containing the quote, a source and optional citation and year properties
  ***/
 const quotes = [
     {
@@ -59,7 +56,7 @@ const quotes = [
 ];
 
 /***
- * `getRandomQuote` function
+ * Create a 'getRandomQuote' function that returns a random quote from the 'quotes' array
  ***/
 const getRandomQuote = () => {
     // Create random number to use as index for quotes array
@@ -69,7 +66,7 @@ const getRandomQuote = () => {
 };
 
 /***
- * `printQuote` function
+ * Create a 'printQuote' function that uses a random quote object to create and display the html with the quote
  ***/
 const printQuote = () => {
     // Get a random quote
@@ -93,11 +90,10 @@ const printQuote = () => {
     // Add htmlString to page
     document.getElementById("quote-box").innerHTML = htmlString;
 };
-printQuote();
+printQuote(); /* to have a random quote present the first time the page laods */
 
 /***
- * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
+ * Use the provided event listener below to display a random quote on the page
+ * each time the user clicks the 'Show another quote' button
  ***/
-
 document.getElementById("load-quote").addEventListener("click", printQuote, false);
