@@ -1,11 +1,7 @@
-/******************************************
-Treehouse FSJS Techdegree:
-Project 1 - A Random Quote Generator
-******************************************/
-
 /***
- * Create an array called 'quotes' containing a minimum of 5 objects
- * - containing the quote, a source and optional citation and year properties
+ * The 'quotes' array contains a list of quote objects
+ * - each with quote and source properties
+ * - and optional citation, year and tag properties
  ***/
 const quotes = [
     {
@@ -62,7 +58,8 @@ const quotes = [
 ];
 
 /***
- * Create a 'getRandomQuote' function that returns a random quote from the 'quotes' array
+ * The 'getRandomQuote' function
+ * -> returns a random quote from the 'quotes' array
  ***/
 const getRandomQuote = () => {
     // Create random number to use as index for quotes array
@@ -72,7 +69,8 @@ const getRandomQuote = () => {
 };
 
 /***
- * Create a function to set a random background color to the page
+ * The 'setRandomBackgroundColor' function
+ * -> sets a random background color to the page
  ***/
 const setRandomBackgroundColor = () => {
     // Create an array with random colors
@@ -93,11 +91,14 @@ const setRandomBackgroundColor = () => {
     const randomNumber = Math.floor(Math.random() * randomColors.length);
     // Get a randomColor by using the random number as the index in the randomColors array
     const randomColor = randomColors[randomNumber];
+    // Update the background color of the body
     document.querySelector("body").style.background = randomColor;
 };
 
 /***
- * Create a 'printQuote' function that uses a random quote object to create and display the html with the quote
+ * The 'printQuote' function takes a random quote object to
+ * -> create an html string
+ * -> display the html string on the page
  ***/
 const printQuote = () => {
     // Get a random quote
@@ -130,14 +131,16 @@ const printQuote = () => {
 printQuote(); /* to have a random quote present the first time the page laods */
 
 /***
- * Create a timing function to print a new quote every 15 seconds
+ * The following timing function
+ * -> prints a new quote to the page every 15 seconds
  ***/
-// setInterval(() => {
-//     printQuote();
-// }, 15000);
+setInterval(() => {
+    printQuote();
+}, 15000);
 
 /***
- * Use the provided event listener below to display a random quote on the page
- * each time the user clicks the 'Show another quote' button
+ * The (provided) event listener below
+ * -> listens to click events on the "Show another quote" page
+ * -> displays a random quote on the page when the button is clicked
  ***/
 document.getElementById("load-quote").addEventListener("click", printQuote, false);
