@@ -11,20 +11,24 @@ const quotes = [
     {
         quote: "The problem with quotes you find in the internet is, that you can never be sure about their origin.",
         source: "Leonardo da Vinci",
+        tag: "humor",
     },
     {
         quote: "Follow the love in your heart - not the stress in your head.",
         source: "Pari",
         citation: "from a public live meeting",
         year: "2021",
+        tag: "wisdom",
     },
     {
         quote: "I believe that everyone in the world has one poem, that is their soulmate.",
         source: "Nayyirah Waheed",
+        tag: "poetry",
     },
     {
         quote: "A teacher has answers to questions. A coach has question to answers.",
         source: "Arjuna Ardagh",
+        tag: "wisdom",
     },
     {
         quote: "The key to freedom? End every judgement with a question mark.",
@@ -43,6 +47,7 @@ const quotes = [
     {
         quote: "To know that I'm nothing is wisdom. To know that I am everything is love. And between the two life flows.",
         source: "Nisargadatta",
+        tag: "wisdom",
     },
     {
         quote: "If you argue with reality, you lose - but only always.",
@@ -52,6 +57,7 @@ const quotes = [
     {
         quote: "Set your life on fire, seek those who fan your flames.",
         source: "Rumi",
+        tag: "poetry",
     },
 ];
 
@@ -76,7 +82,7 @@ const printQuote = () => {
       <p class="quote">${randomQuote.quote}</p>
       <p class="source">${randomQuote.source}
     `;
-    // Check if quote has a citation property
+    // Check if quote has citation, year and/or tag properties
     if (randomQuote.citation) {
         // Add citation property to htmlString
         htmlString += `<span class="citation">${randomQuote.citation}</span>`;
@@ -85,11 +91,16 @@ const printQuote = () => {
         // Add year to htmlString
         htmlString += `<span class="year">${randomQuote.year}</span>`;
     }
+    if (randomQuote.tag) {
+        // Add tag to htmlString
+        htmlString += `<span class="tag">${randomQuote.tag}</span>`;
+    }
     // Add the closing </p> to the htmlString
     htmlString += "</p>";
     // Add htmlString to page
     document.getElementById("quote-box").innerHTML = htmlString;
 };
+
 printQuote(); /* to have a random quote present the first time the page laods */
 
 /***
