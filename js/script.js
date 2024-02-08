@@ -19,7 +19,7 @@ const quotes = [
         quote: "Follow the love in your heart - not the stress in your head.",
         source: "Pari",
         citation: "from a public live meeting",
-        year: 2021,
+        year: "2021",
     },
     {
         quote: "I believe that everyone in the world has one poem, that is their soulmate.",
@@ -44,7 +44,7 @@ const quotes = [
         source: "Thoreau",
     },
     {
-        quote: "To know that I'm nothing is wisdom. To know that I am everything is love. And between the two live is moving.",
+        quote: "To know that I'm nothing is wisdom. To know that I am everything is love. And between the two life flows.",
         source: "Nisargadatta",
     },
     {
@@ -61,6 +61,13 @@ const quotes = [
 /***
  * `getRandomQuote` function
  ***/
+const getRandomQuote = () => {
+    // Create random number to use as index for quotes array
+    const randomNumber = Math.floor(Math.random() * quotes.length);
+    // Return random quote by using the randomNumber as an index
+    return quotes[randomNumber];
+};
+console.log(getRandomQuote());
 
 /***
  * `printQuote` function
@@ -71,4 +78,4 @@ const quotes = [
  * DO NOT CHANGE THE CODE BELOW!!
  ***/
 
-document.getElementById("load-quote").addEventListener("click", printQuote, false);
+// document.getElementById("load-quote").addEventListener("click", printQuote, false);
