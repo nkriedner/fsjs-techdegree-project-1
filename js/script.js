@@ -67,11 +67,34 @@ const getRandomQuote = () => {
     // Return random quote by using the randomNumber as an index
     return quotes[randomNumber];
 };
-console.log(getRandomQuote());
 
 /***
  * `printQuote` function
  ***/
+const printQuote = () => {
+    // Get a random quote
+    const randomQuote = getRandomQuote();
+    console.log(randomQuote);
+    // Create the html for the display of the quote
+    let htmlString = `
+      <p class="quote">${randomQuote.quote}</p>
+      <p class="source">${randomQuote.source}
+    `;
+    // Check if quote has a citation property
+    if (randomQuote.citation) {
+        // Add citation property to htmlString
+        htmlString += `<span class="citation">${randomQuote.citation}</span>`;
+    }
+    if (randomQuote.year) {
+        // Add year to htmlString
+        htmlString += `<span class="year">${randomQuote.year}</span>`;
+    }
+    // Add the closing </p> to the htmlString
+    htmlString += "</p>";
+    // Add htmlString to page
+    document.getElementById("quote-box").innerHTML = htmlString;
+};
+printQuote();
 
 /***
  * click event listener for the print quote button
