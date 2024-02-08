@@ -72,6 +72,20 @@ const getRandomQuote = () => {
 };
 
 /***
+ * Create a function to set a random background color to the page
+ ***/
+const setRandomBackgroundColor = () => {
+    // Create an array with random colors
+    const randomColors = ["tomato", "green", "blue", "red", "orange", "purple", "black"];
+    // Create random number to use as index for randomColors array
+    const randomNumber = Math.floor(Math.random() * randomColors.length);
+    // Get a randomColor by using the random number as the index in the randomColors array
+    const randomColor = randomColors[randomNumber];
+    console.log(randomColor);
+    document.querySelector("body").style.background = randomColor;
+};
+
+/***
  * Create a 'printQuote' function that uses a random quote object to create and display the html with the quote
  ***/
 const printQuote = () => {
@@ -102,22 +116,14 @@ const printQuote = () => {
     // Set a random background color for the page
     setRandomBackgroundColor();
 };
+printQuote(); /* to have a random quote present the first time the page laods */
 
 /***
- * Create a function to set a random background color to the page
+ * Create a timing function to print a new quote every 15 seconds
  ***/
-const setRandomBackgroundColor = () => {
-    // Create an array with random colors
-    const randomColors = ["tomato", "green", "blue", "red", "orange", "purple", "black"];
-    // Create random number to use as index for randomColors array
-    const randomNumber = Math.floor(Math.random() * randomColors.length);
-    // Get a randomColor by using the random number as the index in the randomColors array
-    const randomColor = randomColors[randomNumber];
-    console.log(randomColor);
-    document.querySelector("body").style.background = randomColor;
-};
-
-printQuote(); /* to have a random quote present the first time the page laods */
+setInterval(() => {
+    printQuote();
+}, 15000);
 
 /***
  * Use the provided event listener below to display a random quote on the page
