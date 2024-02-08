@@ -74,7 +74,6 @@ const getRandomQuote = () => {
 const printQuote = () => {
     // Get a random quote
     const randomQuote = getRandomQuote();
-    console.log(randomQuote);
     // Create the html for the display of the quote
     let htmlString = `
       <p class="quote">${randomQuote.quote}</p>
@@ -101,4 +100,4 @@ printQuote();
  * DO NOT CHANGE THE CODE BELOW!!
  ***/
 
-// document.getElementById("load-quote").addEventListener("click", printQuote, false);
+document.getElementById("load-quote").addEventListener("click", printQuote, false);
