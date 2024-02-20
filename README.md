@@ -4,4 +4,6 @@ The task was to use basic JavaScript syntax, variables, loops, conditionals, and
 
 Starter files in Commit 1 were provided, the rest of the code and files were created and added by myself.
 
+I received an "Exceeds Expectation" grade upon submitting the project.
+
 View Live Page: https://nkriedner.github.io/fsjs-techdegree-project-1/
